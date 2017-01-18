@@ -1,7 +1,7 @@
 if (Sys.getenv('VCAP_APP_PORT') == "") {
   # In case we're on a local system, run this:
   print('running locally')
-  runApp('shiny_learn',port=8000,launch.browser=F)
+  runApp('learnshiny',port=8000,launch.browser=F)
   
 } else {
   # In case we're on Cloudfoundry, run this:
@@ -42,5 +42,5 @@ if (Sys.getenv('VCAP_APP_PORT') == "") {
   print("test")
   write("prints to stderr", stderr())
   write("prints to stdout", stdout())
-  runApp('shiny_learn',port=myPort,host="0.0.0.0",launch.browser=F)
+  runApp('learnshiny',port=myPort,host="0.0.0.0",launch.browser=F)
 }
