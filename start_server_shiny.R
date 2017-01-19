@@ -1,13 +1,4 @@
-if (Sys.getenv('VCAP_APP_PORT') == "") {
-  # In case we're on a local system, run this:
-  print('running locally')
-  runApp('learnshiny',port=8000,launch.browser=F)
-  
-} else {
-  # In case we're on Cloudfoundry, run this:
-  print('running on CF')
-  
-  # Starting Rook server during CF startup phase - after 60 seconds start the actual Shiny server
+
   library(Rook)
   myPort <- as.numeric(Sys.getenv('VCAP_APP_PORT'))
   myInterface <- Sys.getenv('VCAP_APP_HOST')
@@ -43,4 +34,3 @@ if (Sys.getenv('VCAP_APP_PORT') == "") {
   write("prints to stderr", stderr())
   write("prints to stdout", stdout())
   runApp('learnshiny',port=myPort,host="0.0.0.0",launch.browser=F)
-}
