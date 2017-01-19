@@ -36,12 +36,12 @@
   
   
   # run shiny server
-  sink(stderr())
-  options(bitmapType='cairo')
-  getOption("bitmapType")
-  print("test")
-  write("prints to stderr", stderr())
-  write("prints to stdout", stdout())
+  # sink(stderr())
+  # options(bitmapType='cairo')
+  # getOption("bitmapType")
+  # print("test")
+  # write("prints to stderr", stderr())
+  # write("prints to stdout", stdout())
   runApp('shiny',port=3838,host="0.0.0.0",launch.browser=F)
 
 
