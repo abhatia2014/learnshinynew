@@ -1,4 +1,4 @@
-source("init.R")
+#source("init.R")
 runApp('shiny')
 
 
